@@ -1,4 +1,5 @@
-public class Event {
+import java.util.Objects;
+public abstract class Event {
     private String eventname;
     private String date;
     private String location;
@@ -19,25 +20,34 @@ public class Event {
     public String getLocation() {
         return location;
     }
-    public String getDresscode() {
-        return dressСode;
-    }
+    public String getDresscode() {return dressСode;}
+
     public void setEventname(String eventname) {
         this.eventname = eventname;
     }
-
     public void setDate(String date) {
         this.date = date;
     }
-
     public void setLocation(String location) {
         this.location = location;
     }
-
     public void setDressCode(String dressСode) {
         this.dressСode = dressСode;
     }
-    public void result(){
-        System.out.println("Event: "+eventname+", Date: "+date+", Location: "+location+", Dress code: "+dressСode);
+    @Override
+    public  String toString(){
+        return "Event: "+eventname+", Date: "+date+", Location: "+location+", Dress code: "+dressСode;
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Event event = (Event) o;
+        return Objects.equals(eventname, event.eventname) && Objects.equals(date, event.date);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(eventname, date);
     }
 }
