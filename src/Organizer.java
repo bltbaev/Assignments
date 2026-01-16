@@ -1,13 +1,29 @@
 import java.util.Objects;
 public class Organizer {
+    private int id;
     private String organizername;
     private String company;
     private Event managdedevent;
+
+    public Organizer(int id,String organizername, String company, Event managdedevent) {
+        this.id=id;
+        this.organizername = organizername;
+        this.company = company;
+        this.managdedevent = managdedevent;
+    }
 
     public Organizer(String organizername, String company, Event managdedevent) {
         this.organizername = organizername;
         this.company = company;
         this.managdedevent = managdedevent;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getOrganizername() {

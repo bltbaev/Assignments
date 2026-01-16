@@ -1,16 +1,26 @@
 import java.util.Objects;
-public abstract class Event {
+public class Event {
+    protected int id ;
     private String eventname;
     private String date;
     private String location;
     private String dressСode;
 
-    public Event(String eventname,String date,String location,String dressСode){
+    public Event(int id,String eventname,String date,String location,String dressСode){
+        this.id=id;
         this.eventname = eventname;
         this.date=date;
         this.location=location;
         this.dressСode=dressСode;
     }
+
+    public Event(String eventname,String date,String location,String dressCode){
+        this.eventname=eventname;
+        this.date=date;
+        this.location=location;
+        this.dressСode=dressCode;
+    }
+
     public String getEventname() {
         return eventname;
     }
@@ -49,5 +59,21 @@ public abstract class Event {
     @Override
     public int hashCode() {
         return Objects.hash(eventname, date);
+    }
+
+    public String getName() {
+        return eventname;
+    }
+
+    public void setName(String name) {
+        this.eventname = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

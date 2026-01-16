@@ -1,14 +1,31 @@
 import java.util.Objects;
 public class Participant {
+    private int id;
     private String participantname;
     private int age;
     private String prepayment;
+
+    public Participant(int id,String participantname,int age,String prepayment){
+        this.id=id;
+        this.participantname=participantname;
+        this.setAge(age);
+        this.prepayment=prepayment;
+    }
 
     public Participant(String participantname,int age,String prepayment){
         this.participantname=participantname;
         this.setAge(age);
         this.prepayment=prepayment;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getParticipantname() {
         return participantname;
     }
